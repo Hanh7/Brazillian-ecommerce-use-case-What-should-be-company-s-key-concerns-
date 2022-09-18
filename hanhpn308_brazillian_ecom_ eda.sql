@@ -38,7 +38,6 @@ select top 10 * from #olist_customers_date;
 
 select count (distinct customer_id), count (customer_id) from olist_orders_dataset;
 --each customer has only one time of order 
---all of them are considered to be new customers to the company
 -- metric of customer = metric of new customer
 --the company should extend the timeframe of data collection
 --or re-design their way of data collecting and data model
@@ -110,7 +109,7 @@ round((next_total_value-total_value)/total_value,1) as value_growth_ratio
 from olist_order_payment_lead 
 order by year, month;
 
---tang truong rat co van de
+
 
 select top 10 * from olist_order_payments_dataset;
 select count (order_id), count (distinct order_id) 
@@ -180,14 +179,8 @@ on a.order_id = b.order_id;
 select top 10 * from #olist_service_quality
 
 
---3.2 chi so chenh lech giua ngay purchase va ngay deliver thuc te
---chenh lech giua ngay deliver thuc te va ngay estimate 
---=> tu day phai bien thanh ty le ntn de nhin duoc pattern?
-
---=> lam them phan tich giai thich ve review_score:
---thgian van chuyen 
---tinh chat hang hoa: gia thanh, kich thuoc
---chung loai hang hoa
+--3.2 difference between purchase date and delivery date
+--difference between delivery date and estimate 
 
 create table #olist_service_quality_review
 (order_id nvarchar(100), 
