@@ -102,7 +102,7 @@ product_category_name_translation d
 on c.product_category_name = d.product_category_name
 
 
---preference
+--preference of product and payment method
 --change column name
 sp_rename 'product_category_name_translation.column2', 'product_category_translated_name', 'COLUMN';
 
